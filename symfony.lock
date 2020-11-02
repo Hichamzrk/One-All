@@ -135,6 +135,9 @@
     "symfony/string": {
         "version": "v5.1.8"
     },
+    "symfony/templating": {
+        "version": "v5.1.8"
+    },
     "symfony/var-dumper": {
         "version": "v5.1.8"
     },
