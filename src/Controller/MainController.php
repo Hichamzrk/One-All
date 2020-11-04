@@ -1,19 +1,24 @@
 <?php
 
-    namespace App\Controller;
+namespace App\Controller;
 
-    use Symfony\Component\HttpFoundation\Response;
+use App\Entity\Post;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
-    class MainController 
+    class MainController extends AbstractController
     {
         public function index(){
 
-            $response = new Response('bonjour', 200);
+            $post = new Post();
 
-            return $response;
+            dump($post);
 
+            $response = $this->renderView("Main/index.html.twig");
+
+            return new Response($response);
         }
     }
-    
+
 
     

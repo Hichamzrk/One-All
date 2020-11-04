@@ -4,9 +4,9 @@
     
     /**
      * @ORM\Entity
-     * @ORM\Table(name="Request")
+     * @ORM\Table(name="post")
      */
-    class Request
+    class Post
     {
         /**
          * @ORM\Id
@@ -28,7 +28,7 @@
          */
         private $details;
         /**
-         * @ORM\Column(type="integer")
+         * @ORM\Column(type="string")
          */
         private $phone;
 
@@ -56,7 +56,7 @@
 
         }
 
-        public function setAdress($address){
+        public function setAdress($adress){
 
             $this->adress = $adress;
 
@@ -64,7 +64,7 @@
 
         }
 
-        public function setCategory(){
+        public function setCategory($category){
             
             $this->category = $category;
 
@@ -72,7 +72,7 @@
 
         }
        
-        public function setDetails(){
+        public function setDetails($details){
 
             $this->details = $details;
 
@@ -80,7 +80,7 @@
 
         }
        
-        public function setPhone(){
+        public function setPhone($phone){
 
             $this->phone = $phone;
 

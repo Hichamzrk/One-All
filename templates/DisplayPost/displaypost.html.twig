@@ -1,0 +1,10 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+
+    {% for post in posts %}
+        <br>{{ post.details }}
+        {{ post.phone }}
+    {% endfor %}
+
+{% endblock %}
