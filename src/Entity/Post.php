@@ -22,7 +22,7 @@
         /**
          * @ORM\Column(type="string")
          */
-        private $category;
+        private $title;
         /**
          * @ORM\Column(type="text")
          */
@@ -38,9 +38,9 @@
 
         }
        
-        public function getCategory(){
+        public function getTitle(){
 
-            return $this->category;
+            return $this->title;
 
         }
        
@@ -64,11 +64,11 @@
 
         }
 
-        public function setCategory($category){
+        public function setTitle($title){
             
-            $this->category = $category;
+            $this->title = $title;
 
-            return $this->category;
+            return $this->title;
 
         }
        

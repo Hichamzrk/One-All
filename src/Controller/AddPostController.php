@@ -17,7 +17,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
             
             $form = $this->createFormBuilder($post)
                 ->add('adress')
-                ->add('category')
+                ->add('title')
                 ->add('details')
                 ->add('phone')
                 ->add('save', SubmitType::class, ['label' => 'Envoyer'])
@@ -31,7 +31,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
                 $em->persist($post);
                 $em->flush();
 
-                $this->redirectToRoute("add_post");
+                return $this->redirectToRoute("show_post");
             }
             
             return $this->render("AddPost/addpost.html.twig", [

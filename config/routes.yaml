@@ -6,6 +6,6 @@ add_post:
     path: /addpost
     controller: App\Controller\AddPostController::Add
 
-display_post:
-    path: /displaypost
-    controller: App\Controller\DisplayPostController::display
+show_post:
+    path: /showpost
+    controller: App\Controller\ShowPostController::show

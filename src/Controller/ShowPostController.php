@@ -7,13 +7,15 @@ use Doctrine\ORM\EntityRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
-    class DisplayPostController extends AbstractController
+    class ShowPostController extends AbstractController
     {
-        public function display(EntityManagerInterface $em){
+        public function show(EntityManagerInterface $em){
 
             $posts = $em->getRepository(Post::class)->findAll();
 
-            return $this->render("DisplayPost/displaypost.html.twig", [
+            dd($posts);
+
+            return $this->render("ShowPost/showpost.html.twig", [
                 'posts' => $posts
             ]);
 
