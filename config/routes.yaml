@@ -9,3 +9,7 @@ add_post:
 show_post:
     path: /showpost
     controller: App\Controller\ShowPostController::show
+
+show_one:
+    path: /showone/{id}
+    controller: App\Controller\ShowPostController::showOne

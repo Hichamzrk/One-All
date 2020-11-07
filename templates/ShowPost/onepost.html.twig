@@ -1,0 +1,15 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+
+    {% for post in posts %}
+        <h2>{{ post.lastname }} {{ post.firstname }}</h2>
+        <p>Adresse : {{ post.address }}</p>
+        <p>Details : {{ post.details }}</p>
+        <p>Numéro : {{ post.phone }}</p>
+        <p>Email : {{ post.email }}</p>
+        <p>Date : {{ post.createdat|date("m/d/Y") }}</p>
+        <a href="{{ path('show_post') }}">Retour</a>
+    {% endfor %}
+
+{% endblock %}

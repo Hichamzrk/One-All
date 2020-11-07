@@ -1,10 +1,14 @@
 {% extends "base.html.twig" %}
 
 {% block body %}
+    <br>
+    <a href="{{ path('add_post') }}">Ajouter un post</a>
 
     {% for post in posts %}
-        <br>{{ post.details }}
-        {{ post.phone }}
+        <h2>{{ post.lastname }} {{ post.firstname }}</h2>
+        <p>Adresse : {{ post.address }}</p>
+        <p>Date : {{ post.createdat|date("d/m/Y") }}</p>
+        <a href="{{ path('show_one', {'id' : post.id }) }}">Voir plus</a>
     {% endfor %}
 
 {% endblock %}

@@ -2,8 +2,10 @@
 
 {% block body %} 
 
-<h1> Add post </h1>
-{{ form(form) }}
+    <h1> Add post </h1>
+    {{ form(form) }}
+    
+    <a href="{{ path('show_post') }}">Les posts</a>
 
 {% endblock %}
 

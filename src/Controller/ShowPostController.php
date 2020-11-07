@@ -13,10 +13,26 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
             $posts = $em->getRepository(Post::class)->findAll();
 
-            dd($posts);
-
             return $this->render("ShowPost/showpost.html.twig", [
+                
                 'posts' => $posts
+            
+            ]);
+
+        }
+
+        public function showOne(EntityManagerInterface $em, $id){
+
+            $posts = $em->getRepository(Post::class)->findBy([
+                
+                'id' => $id
+                
+            ]);
+
+            return $this->render("ShowPost/onepost.html.twig", [
+                
+                'posts' => $posts
+            
             ]);
 
         }

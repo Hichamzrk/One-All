@@ -1,6 +1,7 @@
 <?php
     namespace App\Entity;
     use Doctrine\ORM\Mapping as ORM;
+    use Symfony\Component\Validator\Constraints as Assert;
     
     /**
      * @ORM\Entity
@@ -17,30 +18,75 @@
         
         /**
          * @ORM\Column(type="string")
+         * @Assert\Length(
+         *      max = 300
+         * )
          */
-        private $adress;
+        private $address;
+        
         /**
          * @ORM\Column(type="string")
+         * @Assert\Length(
+         *      max = 300
+         * )
          */
-        private $title;
+        private $lastName;
+        
         /**
-         * @ORM\Column(type="text")
+         * @ORM\Column(type="string")
+         * @Assert\Length(
+         *      max = 300
+         * )
          */
+        private $firstName;        
+        
+        /**
+        * @ORM\Column(type="text")
+         * @Assert\Length(
+         *      max = 1000
+         * )
+        */
         private $details;
+        
         /**
          * @ORM\Column(type="string")
+         * @Assert\Regex(
+         *      "/\d/"
+         * )
          */
         private $phone;
 
-        public function getAdress(){
+        /**
+         * @ORM\Column(type="string")
+         */
+        private $email;
 
-            return $this->adress;
+        /**
+         * @ORM\Column(type="datetime")
+         */
+        private $createdAt;
+        
+        public function __construct(){
+
+            $this->createdAt = new \DateTime('now');
+
+        }
+
+        public function getAddress(){
+
+            return $this->address;
 
         }
        
-        public function getTitle(){
+        public function getLastName(){
 
-            return $this->title;
+            return $this->lastName;
+
+        }
+
+        public function getFirstName(){
+
+            return $this->firstName;
 
         }
        
@@ -56,19 +102,46 @@
 
         }
 
-        public function setAdress($adress){
+        public function getEmail(){
 
-            $this->adress = $adress;
-
-            return $this->adress;
+            return $this->email;
 
         }
 
-        public function setTitle($title){
-            
-            $this->title = $title;
+        public function getCreatedAt(){
 
-            return $this->title;
+            return $this->createdAt;
+
+        }
+
+        public function getId(){
+
+            return $this->id;
+
+        }
+
+
+        public function setAddress($address){
+
+            $this->address = $address;
+
+            return $this->address;
+
+        }
+
+        public function setLastName($lastName){
+            
+            $this->lastName = $lastName;
+
+            return $this->lastName;
+
+        }
+        
+        public function setFirstName($firstName){
+            
+            $this->firstName = $firstName;
+
+            return $this->firstName;
 
         }
        
@@ -87,5 +160,22 @@
             return $this->phone;
 
         }
+        
+        public function setEmail($email){
+
+            $this->email = $email;
+
+            return $this->email;
+
+        }
+        
+        public function setCreatedAt($createdAt){
+
+            $this->createdAt = $createdAt;
+
+            return $this->createdAt;
+
+        }
+
     }
     
