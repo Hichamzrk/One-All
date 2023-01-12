@@ -1,4 +1,4 @@
-<img src="https://www.univ-catholille.fr/sites/default/files/inline-images/Logo%20All%20Seul.png" style="with: 40px;">
+![](https://www.univ-catholille.fr/sites/default/files/inline-images/Logo%20All%20Seul.png =50x50)
 
 # to help people in danger of covid
 
